@@ -361,7 +361,7 @@ CMakeCache.txt
 Makefile
 cmake_install.cmake
 a.out
-.la
-.lo
-.slo
+*.la
+*.lo
+*.slo
 .libs/

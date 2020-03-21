@@ -15,4 +15,10 @@ pkg_check_modules(LIBMYSQLCLIENT REQUIRED mysqlclient)
 
 link_libraries(mysqlclient)
 
-add_executable(mod_whitelist ${SOURCES})
+add_library(whitelist SHARED
+src/CConfigUtil.cpp
+src/CConfigUtil.h
+src/CGetIpAddressList.cpp
+src/CGetIpAddressList.h
+)
+
