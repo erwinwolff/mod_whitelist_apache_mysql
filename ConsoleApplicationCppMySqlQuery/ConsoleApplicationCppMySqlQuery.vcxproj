@@ -153,11 +153,11 @@
   <ItemGroup>
     <ClCompile Include="..\src\CGetIpAddressList.cpp" />
     <ClCompile Include="ConsoleApplicationCppMySqlQuery.cpp" />
-    <ClCompile Include="..\src\mod_blacklist_mysql.c" />
-    <ClCompile Include="..\src\mod_whitelist_mysql.c" />
+    <ClInclude Include="..\src\CConfigUtil.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\CGetIpAddressList.h" />
+    <ClInclude Include="..\src\CConfigUtil.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -18,18 +18,18 @@
     <ClCompile Include="ConsoleApplicationCppMySqlQuery.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="CGetIpAddressList.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="mod_whitelist_mysql.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="mod_blacklist_mysql.c">
+    <ClCompile Include="..\src\CGetIpAddressList.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CGetIpAddressList.h">
+    <ClInclude Include="..\src\CGetIpAddressList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\CConfigUtil.cpp">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\CConfigUtil.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

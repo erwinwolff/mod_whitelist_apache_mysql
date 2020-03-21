@@ -1,36 +1,17 @@
 #include "CGetIpAddressList.h"
-#include<mysql/mysql.h>
-#include<iostream>
-#include<algorithm>
+#include "CConfigUtil.h"
+#include <mysql/mysql.h>
+#include <iostream>
+#include <algorithm>
 #include <string>
 
 using namespace std;
-
-const vector<string> Explode(const string& s, const char& c)
-{
-	string buff{ "" };
-	vector<string> v;
-
-	for (auto n : s)
-	{
-		if (n != c) buff += n; else
-			if (n == c && buff != "") { v.push_back(buff); buff = ""; }
-	}
-	if (buff != "") v.push_back(buff);
-
-	return v;
-}
 
 const vector<string> ExitInError(MYSQL * conn)
 {
 	cout << mysql_error(conn) << endl;
 	mysql_close(conn);
 	return vector<string>();
-}
-
-const string GetConfigItem(vector<string> &configs, const string configName)
-{
-	return find_if(configs.begin(), configs.end(), [configName](string config) { return config.find(configName) != string::npos; })[0];
 }
 
 CGetIpAddressList::CGetIpAddressList(std::string connectionString, std::string query)
@@ -41,13 +22,14 @@ CGetIpAddressList::CGetIpAddressList(std::string connectionString, std::string q
 
 void CGetIpAddressList::setConnectionString(string connectionString)
 {
-	auto configs = Explode(connectionString, ';');
+	CConfigUtil util;
+	auto configs = util.Explode(connectionString, ';');
 
-	server = Explode(GetConfigItem(configs, "Server="), '=')[1];
-	database = Explode(GetConfigItem(configs, "Database="), '=')[1];
-	user = Explode(GetConfigItem(configs, "User="), '=')[1];
-	password = Explode(GetConfigItem(configs, "Password="), '=')[1];
-	auto portString = Explode(GetConfigItem(configs, "Port="), '=')[1];
+	server = util.Explode(util.GetConfigItem(configs, "Server="), '=')[1];
+	database = util.Explode(util.GetConfigItem(configs, "Database="), '=')[1];
+	user = util.Explode(util.GetConfigItem(configs, "User="), '=')[1];
+	password = util.Explode(util.GetConfigItem(configs, "Password="), '=')[1];
+	auto portString = util.Explode(util.GetConfigItem(configs, "Port="), '=')[1];
 	port = stoi(portString);
 }
 
