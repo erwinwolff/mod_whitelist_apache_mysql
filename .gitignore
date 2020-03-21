@@ -355,3 +355,8 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+.cmake
+CMakeFiles/
+CMakeCache.txt
+Makefile
+cmake_install.cmake
