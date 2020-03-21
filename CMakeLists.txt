@@ -11,8 +11,8 @@ file(GLOB SOURCES
 )
 
 include(FindPkgConfig)
-pkg_check_modules(LIBMYSQLCLIENT REQUIRED mariadb)
+pkg_check_modules(LIBMYSQLCLIENT REQUIRED mysqlclient)
 
-link_libraries(mariadbclient)
+link_libraries(mysqlclient)
 
 add_executable(mod_whitelist ${SOURCES})
