@@ -1,6 +1,12 @@
 #include "CGetIpAddressList.h"
 #include "CConfigUtil.h"
+
+#ifdef WIN32
 #include <mysql/mysql.h>
+#else
+#include <mariadb/mysql.h>
+#endif
+
 #include <iostream>
 #include <algorithm>
 #include <string>

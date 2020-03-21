@@ -10,4 +10,9 @@ file(GLOB SOURCES
     src/*.cpp
 )
 
+include(FindPkgConfig)
+pkg_check_modules(LIBMYSQLCLIENT REQUIRED mariadb)
+
+link_libraries(mariadbclient)
+
 add_executable(mod_whitelist ${SOURCES})
