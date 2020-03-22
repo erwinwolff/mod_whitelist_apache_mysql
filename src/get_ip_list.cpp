@@ -7,7 +7,7 @@
 
 using namespace std;
 
-bool ipaddress_is_in_list(const char* connectionString, const char* query, const char* ipAddress)
+int ipaddress_is_in_list(const char* connectionString, const char* query, const char* ipAddress)
 {
    string address(ipAddress);
 
@@ -16,5 +16,5 @@ bool ipaddress_is_in_list(const char* connectionString, const char* query, const
    auto result = ipAddressList.ToList();
    auto resultSet = find_if(result.begin(), result.end(), [address](string ip) { return ip.find(address) != string::npos; });
 
-   return resultSet.size() > 0;
+   return sizeof(resultSet)/sizeof(int);
 }
