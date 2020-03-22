@@ -14,6 +14,7 @@
 #include "mpm_common.h"
 
 #include "apr_strings.h"
+#include "get_ip_list.h"
 
 module AP_MODULE_DECLARE_DATA whitelist_mysql_module;
 

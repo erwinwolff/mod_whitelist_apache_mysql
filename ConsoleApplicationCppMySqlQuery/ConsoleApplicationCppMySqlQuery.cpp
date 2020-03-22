@@ -1,5 +1,6 @@
 #include <iostream>
 #include <mysql/mysql.h>
+#include <Windows.h>
 #include "..\src\CGetIpAddressList.h"
 
 using namespace std;
