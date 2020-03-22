@@ -9,14 +9,20 @@ using namespace std;
 
 int ipaddress_is_in_list(const char* connectionString, const char* query, const char* ipAddress)
 {
-   string address(ipAddress);
-   CGetIpAddressList * ipAddressList = new CGetIpAddressList(string(connectionString), string(query));
+	string address(ipAddress);
+	CGetIpAddressList * ipAddressList = new CGetIpAddressList(string(connectionString), string(query));
 
-   auto result = ipAddressList->ToList();
-   auto resultSet = find_if(result.begin(), result.end(), [address](string ip) { return ip.find(address) != string::npos; });
+	auto result = ipAddressList->ToList();
 
-   if(ipAddressList)
-	delete ipAddressList;
+	bool foundIp = false;
+	for(size_t i = 0; i < result.size(); i++)
+	{
+		if(result[i] == address)
+			foundIp = true;
+	}
 
-   return 0;
+	if(ipAddressList)
+		delete ipAddressList;
+
+	return foundIp;
 }

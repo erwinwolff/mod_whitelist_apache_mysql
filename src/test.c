@@ -3,9 +3,10 @@
 
 int main()
 {
-	printf("Initializing whitelist test");
+	printf("Initializing whitelist test... \n");
 
-	int result = ipaddress_is_in_list("Server=localhost;Database=TestDb;User=test;Password=test", "SELECT * FROM allowedips", "127.0.0.1");
+	int result = ipaddress_is_in_list("Server=localhost;Database=TestDb;User=test;Password=test;Port=3306", "SELECT Ip FROM allowedips", "127.0.0.1");
 
-	printf("\n%s\n", result);
+	if(result == 1)
+		printf("localhost record found!\0");
 }
