@@ -17,7 +17,7 @@
 #include "get_ip_list.h"
 
 void          *create_dir_conf(apr_pool_t *pool, char *context);
-void          *merge_dir_conf(apr_pool_t *pool, void *BASE, void *ADD);
+void          *mysql_whitelist_merge_dir_conf(apr_pool_t *pool, void *BASE, void *ADD);
 
 module AP_MODULE_DECLARE_DATA whitelist_mysql_module;
 
@@ -42,15 +42,15 @@ void *create_dir_conf(apr_pool_t *pool, char *context)
 		cfg->enabled = 0;
         }
     }
-
+    ap_log_error(APLOG_MARK, APLOG_INFO, 0, s, "Standard MySql Whitelist configuration initialized");
     return cfg;
 }
 
 
-void *merge_dir_conf(apr_pool_t *pool, void *BASE, void *ADD) {
-    whitelist_mysql_config *base = (whitelist_mysql_config *) BASE ; /* This is what was set in the parent context */
-    whitelist_mysql_config *add = (whitelist_mysql_config *) ADD ;   /* This is what is set in the new context */
-    whitelist_mysql_config *conf = (whitelist_mysql_config *) create_dir_conf(pool, "Merged configuration"); /* This will be the merged configuration */
+void *mysql_whitelist_merge_dir_conf(apr_pool_t *pool, void *BASE, void *ADD) {
+    whitelist_mysql_config *base = (whitelist_mysql_config *) BASE ;
+    whitelist_mysql_config *add = (whitelist_mysql_config *) ADD ;  
+    whitelist_mysql_config *conf = (whitelist_mysql_config *) create_dir_conf(pool, "Merged configuration"); 
 
     conf->enabled = ( add->enabled == 0 ) ? base->enabled : add->enabled ;
 
@@ -98,7 +98,7 @@ const char *whitelist_mysql_set_enable(cmd_parms *cmd, void *cfg, const char *ar
 }
 
 
-static const command_rec        whitelist_mysql_directives[] =
+static const command_rec whitelist_mysql_directives[] =
 {
     AP_INIT_TAKE1("WhiteListMySqlConnectrionstring",  whitelist_mysql_set_connectionstring, NULL, RSRC_CONF, "MySql Whitelist Connectionstring"),
     AP_INIT_TAKE1("WhiteListMySqlQuery",  whitelist_mysql_set_query, NULL, RSRC_CONF, "SQL Query to Whitelist"),
@@ -113,9 +113,9 @@ static void whitelist_mysql_register_hooks(apr_pool_t *p)
 
 AP_DECLARE_MODULE(whitelist_mysql_module) =
 {
-STANDARD20_MODULE_STUFF,
+    STANDARD20_MODULE_STUFF,
     NULL,
-    merge_dir_conf,  /* Merge handler for per-directory configurations */
+    mysql_whitelist_merge_dir_conf,  /* Merge handler for per-directory configurations */
     NULL, 
     NULL, 
     whitelist_mysql_directives,  
