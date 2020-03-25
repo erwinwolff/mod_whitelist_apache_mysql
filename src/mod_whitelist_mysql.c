@@ -76,11 +76,6 @@ static int whitelist_check_access(request_rec *r)
 	return DECLINED;
 }
 
-static void whitelist_mysql_register_hooks(apr_pool_t *p)
-{
-	ap_hook_check_access(whitelist_check_access, NULL, NULL, APR_HOOK_MIDDLE, AP_AUTH_INTERNAL_PER_CONF);
-}
-
 const char *whitelist_mysql_set_query(cmd_parms *cmd, void *cfg, const char *arg)
 {
     config.query = arg;
@@ -111,6 +106,11 @@ static const command_rec        whitelist_mysql_directives[] =
     { NULL }
 };
 
+static void whitelist_mysql_register_hooks(apr_pool_t *p)
+{
+	ap_hook_check_access(whitelist_check_access, NULL, NULL, APR_HOOK_MIDDLE, AP_AUTH_INTERNAL_PER_CONF);
+}
+
 AP_DECLARE_MODULE(whitelist_mysql_module) =
 {
 STANDARD20_MODULE_STUFF,
@@ -120,5 +120,5 @@ STANDARD20_MODULE_STUFF,
     NULL, 
     whitelist_mysql_directives,  
     whitelist_mysql_register_hooks 
-}
+};
 
