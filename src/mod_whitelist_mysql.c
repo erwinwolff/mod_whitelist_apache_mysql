@@ -111,13 +111,14 @@ static const command_rec        whitelist_mysql_directives[] =
     { NULL }
 };
 
-module AP_MODULE_DECLARE_DATA   whitelist_mysql_module =
+AP_DECLARE_MODULE(whitelist_mysql_module) =
 {
-    STANDARD20_MODULE_STUFF,
-    NULL, /* Per-directory configuration handler */
+STANDARD20_MODULE_STUFF,
+    NULL,
     merge_dir_conf,  /* Merge handler for per-directory configurations */
-    NULL, /* Per-server configuration handler */
-    NULL,  /* Merge handler for per-server configurations */
-    whitelist_mysql_directives,      /* Any directives we may have for httpd */
-    whitelist_mysql_register_hooks /* Our hook registering function */
-};
+    NULL, 
+    NULL, 
+    whitelist_mysql_directives,  
+    whitelist_mysql_register_hooks 
+}
+
