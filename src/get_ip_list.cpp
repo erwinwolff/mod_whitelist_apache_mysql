@@ -7,7 +7,7 @@
 
 using namespace std;
 
-int ipaddress_is_in_list(const char* connectionString, const char* query, const char* ipAddress)
+extern "C" int ipaddress_is_in_list(const char* connectionString, const char* query, const char* ipAddress)
 {
 	string address(ipAddress);
 	CGetIpAddressList * ipAddressList = new CGetIpAddressList(string(connectionString), string(query));
