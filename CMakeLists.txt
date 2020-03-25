@@ -5,20 +5,21 @@ project(mod_whitelist VERSION 1.0)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-file(GLOB SOURCES
-    src/*.h
-    src/*.cpp
-)
+add_definitions(-DLINUX -D_REENTRANT -D_GNU_SOURCE -D_LARGEFILE64_SOURCE)
+include_directories(SYSTEM /usr/include/apache2 /usr/include/apr-1.0 /usr/include)
 
 include(FindPkgConfig)
 pkg_check_modules(LIBMYSQLCLIENT REQUIRED mysqlclient)
 
 link_libraries(mysqlclient)
 
-add_library(whitelist SHARED
+add_library(whitelist_mysql SHARED
 src/CConfigUtil.cpp
 src/CConfigUtil.h
 src/CGetIpAddressList.cpp
 src/CGetIpAddressList.h
+src/get_ip_list.cpp
+src/get_ip_list.hpp
+src/mod_whitelist_mysql.c
 )
 

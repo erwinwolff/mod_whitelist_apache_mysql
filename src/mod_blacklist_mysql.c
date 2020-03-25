@@ -15,7 +15,7 @@
 
 #include "apr_strings.h"
 
-module AP_MODULE_DECLARE_DATA black_list_mysql_module;
+/* module AP_MODULE_DECLARE_DATA black_list_mysql_module;
 
 static int x_check_access(request_rec *r)
 {
@@ -25,4 +25,4 @@ static int x_check_access(request_rec *r)
 static void x_register_hooks(apr_pool_t *p)
 {
 	ap_hook_check_access(x_check_access, NULL, NULL, APR_HOOK_MIDDLE, AP_AUTH_INTERNAL_PER_CONF);
-}
+}*/
