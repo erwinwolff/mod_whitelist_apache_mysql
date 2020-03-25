@@ -42,7 +42,7 @@ void *create_dir_conf(apr_pool_t *pool, char *context)
 		cfg->enabled = 0;
         }
     }
-    ap_log_error(APLOG_MARK, APLOG_INFO, 0, s, "Standard MySql Whitelist configuration initialized");
+    ap_log_error(APLOG_MARK, APLOG_INFO, 0, 0, "Standard MySql Whitelist configuration initialized");
     return cfg;
 }
 
@@ -68,6 +68,7 @@ static int whitelist_check_access(request_rec *r)
 	if (strcasecmp(config.query, "") || strcasecmp(config.connectionString, ""))
 		return DECLINED;
 
+        ap_log_error(APLOG_MARK, APLOG_INFO, 0, 0, "Ip Address -> %s", r->useragent_ip);
 	int isInList = ipaddress_is_in_list(config.connectionString, config.query, r->useragent_ip);
 
 	if (isInList == 0)
