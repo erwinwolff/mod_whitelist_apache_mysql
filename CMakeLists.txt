@@ -15,11 +15,8 @@ link_libraries(mysqlclient)
 
 add_library(whitelist_mysql SHARED
 src/CConfigUtil.cpp
-src/CConfigUtil.h
 src/CGetIpAddressList.cpp
-src/CGetIpAddressList.h
 src/get_ip_list.cpp
-src/get_ip_list.hpp
 src/mod_whitelist_mysql.c
 )
 

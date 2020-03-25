@@ -14,7 +14,7 @@
 #include "mpm_common.h"
 
 #include "apr_strings.h"
-#include "get_ip_list.hpp"
+#include "get_ip_list.h"
 
 void          *mysql_whitelist_create_dir_conf(apr_pool_t *pool, char *context);
 void          *mysql_whitelist_merge_dir_conf(apr_pool_t *pool, void *BASE, void *ADD);
