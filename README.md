@@ -1,8 +1,8 @@
 ## Why Mod_Whitelist?
 Because sometimes you need simple IP based filtering. It is manageable from a MySQL table, it is up to you to fill the MySQL table. Its components are:
 
-* Apache 2.4
-* MySQL
+* [Apache 2.4](https://httpd.apache.org/)
+* Either [MySQL](https://www.mysql.com/) or [MariaDB](https://mariadb.com/)
 * mod_whitelist
 
 ## How do I configure it?
