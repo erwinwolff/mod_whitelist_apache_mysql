@@ -1,8 +1,18 @@
-# Why Mod_Whitelist?
+## Why Mod_Whitelist?
 Because sometimes you need simple IP based filtering. It is manageable from a MySQL table, it is up to you to fill the MySQL table. Its components are:
 
-Apache 2.4
-MySQL
+* Apache 2.4
+* MySQL
+* mod_whitelist
+
+## How do I configure it?
+Configuration is very simple.
+
+Inside a vhost you just set these parameters:
+* SetHandler whitelist_mysql
+* WhiteListMySqlEnabled On
+* WhiteListMySqlConnectrionstring "Server=localhost;Database=Testdb;User=test;Password=test;Port=3306"
+* WhiteListMySqlQuery "SELECT Ip FROM allowedips"
 
 ### Why was it created?
 Because I needed it ;) 
