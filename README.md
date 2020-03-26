@@ -23,7 +23,7 @@ Because I needed it ;)
 Some ideas to put mod_whitelist to work. 
 * To put some sort of security in place for a old software that is too expensive to update
 * Secure resources like REST endpoints who do not have security rolled out as part of their implementation
-* As a compromise for if firewall-level ip-filtering is too difficult to setup and when securtiy on application-level ip-filtering is too difficult or resource-intensive to setup
+* As a compromise for if firewall-level ip-filtering is too difficult to setup and when securtiy on application-level ip-filtering is too difficult or resource-intensive
 
 ## Stage of development
 Mod_Whitelist is usable on a functional level, but should be considered beta nonetheless. 
