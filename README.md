@@ -2,4 +2,4 @@
 Easy black- and whitelisting of ip addresses
 
 # Stage of development
-This mod is still in early stage of development. Do not use.
+Mod_Whitelist is usable on a functional level, but should be considered beta nonetheless. 
