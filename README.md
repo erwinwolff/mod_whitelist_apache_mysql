@@ -27,6 +27,8 @@ Mod_Whitelist is usable on a functional level, but should be considered beta non
 - [x] Should block all ip's not on the whitelist
 - [x] Should be easily configurable
 - [ ] Should accept ip-address ranges
+- [ ] Debian and Ubuntu packaging
+- [ ] Redhat-variations packaging
 
 ## Do you accepted pull-requests?
 It depends, if it really adds something. I don't want to have this piece of C++ code solve every problem in the world, so keep pull requests focused towards whitelisting ip-addresses based on a database provided list.
