@@ -1,3 +1,4 @@
+# Mod_Whitelist
 ## Why Mod_Whitelist?
 Because sometimes you need simple IP based filtering. It is manageable from a MySQL table, it is up to you to fill the MySQL table. Its components are:
 
