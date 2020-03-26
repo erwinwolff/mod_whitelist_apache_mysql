@@ -56,6 +56,10 @@ void *mysql_whitelist_merge_dir_conf(apr_pool_t *pool, void *BASE, void *ADD) {
 
     conf->enabled = ( add->enabled == 0 ) ? base->enabled : add->enabled ;
 
+    ap_log_error(APLOG_MARK, APLOG_INFO, 0, 0, "MySql Whitelist enabled: %d", conf->enabled);
+    ap_log_error(APLOG_MARK, APLOG_INFO, 0, 0, "MySql Whitelist connectionString: %s", conf->connectionString);
+    ap_log_error(APLOG_MARK, APLOG_INFO, 0, 0, "MySql Whitelist query: %s", conf->query);
+	
     return conf ;
 }
 
