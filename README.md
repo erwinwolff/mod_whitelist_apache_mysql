@@ -7,6 +7,15 @@ Because sometimes you need simple IP based filtering. It is manageable from a My
 * Either [MySQL](https://www.mysql.com/) or [MariaDB](https://mariadb.com/)
 * mod_whitelist
 
+## Possible usages
+Some ideas to put mod_whitelist to work. 
+* To put some sort of security in place for a old software that is too expensive to update
+* Secure resources like REST endpoints who do not have security rolled out as part of their implementation
+* As a compromise for if firewall-level ip-filtering is too difficult to setup and when securtiy on application-level ip-filtering is too difficult or resource-intensive
+
+## Why was it created?
+Because I needed it ;) 
+
 ## How do I configure it?
 Configuration is very simple.
 
@@ -16,14 +25,13 @@ Inside a vhost you just set these parameters:
 * WhiteListMySqlConnectrionstring "Server=localhost;Database=Testdb;User=test;Password=test;Port=3306"
 * WhiteListMySqlQuery "SELECT Ip FROM allowedips"
 
-## Why was it created?
-Because I needed it ;) 
+## How do I compile it?
+Building from source is very easy (on debian-clones):
 
-## Possible usages
-Some ideas to put mod_whitelist to work. 
-* To put some sort of security in place for a old software that is too expensive to update
-* Secure resources like REST endpoints who do not have security rolled out as part of their implementation
-* As a compromise for if firewall-level ip-filtering is too difficult to setup and when securtiy on application-level ip-filtering is too difficult or resource-intensive
+* cmake .
+* make
+* ./apxs.sh 
+* service apache2 restart
 
 ## Stage of development
 Mod_Whitelist is usable on a functional level, but should be considered beta nonetheless. 
