@@ -20,7 +20,6 @@ Because I needed it ;)
 Configuration is very simple.
 
 Inside a vhost you just set these parameters:
-* SetHandler whitelist_mysql
 * WhiteListMySqlEnabled On
 * WhiteListMySqlConnectrionstring "Server=localhost;Database=Testdb;User=test;Password=test;Port=3306"
 * WhiteListMySqlQuery "SELECT Ip FROM allowedips"
