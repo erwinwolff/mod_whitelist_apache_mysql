@@ -32,9 +32,6 @@ Building from source is very easy (on debian-clones):
 * ./apxs.sh 
 * service apache2 restart
 
-## Stage of development
-Mod_Whitelist is usable on a functional level, but should be considered beta nonetheless. 
-
 ## Future
 - [x] Should be easily compiled with simple buildchain
 - [x] Should block all ip's not on the whitelist
