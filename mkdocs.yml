@@ -1,3 +1,5 @@
 site_name: Mod_Whitelist documentation
 site_url: https://github.com/erwinwolff/mod_whitelist
 repo_url: https://github.com/erwinwolff/mod_whitelist
+nav:
+    - Home: 'index.md'
