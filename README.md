@@ -1,3 +1,5 @@
+[![Documentation Status](https://readthedocs.org/projects/mod-whitelist/badge/?version=latest)](https://mod-whitelist.readthedocs.io/en/latest/?badge=latest)
+
 # Mod_Whitelist
 ## Why Mod_Whitelist?
 Because sometimes you need simple IP based filtering. It is manageable from a MySQL table, it is up to you to fill the MySQL table. Its components are:
