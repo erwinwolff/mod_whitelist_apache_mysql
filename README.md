@@ -1,4 +1,4 @@
-[![Documentation Status](https://readthedocs.org/projects/mod-whitelist/badge/?version=latest)](https://mod-whitelist.readthedocs.io/en/latest/?badge=latest)
+[![Documentation Status](https://readthedocs.org/projects/mod-whitelist/badge/?version=latest)](https://mod-whitelist.readthedocs.io/en/latest/?badge=latest) [![Language grade: C/C++](https://img.shields.io/lgtm/grade/cpp/g/erwinwolff/mod_whitelist.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/erwinwolff/mod_whitelist/context:cpp) [![Language grade: C/C++](https://img.shields.io/lgtm/grade/cpp/g/erwinwolff/mod_whitelist.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/erwinwolff/mod_whitelist/context:cpp)
 
 # Mod_Whitelist
 ## Why Mod_Whitelist?
