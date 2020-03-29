@@ -7,9 +7,8 @@ Because sometimes you need simple IP based filtering. It is manageable from a My
 - mod_whitelist
 
 ## How do I configure it?
-Configuration is very simple.
+Configuration is very simple. Inside a vhost you just set these parameters:
 
-Inside a vhost you just set these parameters:
 - WhiteListMySqlEnabled On
 - WhiteListMySqlConnectrionstring "Server=localhost;Database=Testdb;User=test;Password=test;Port=3306"
 - WhiteListMySqlQuery "SELECT Ip FROM allowedips"
