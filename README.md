@@ -1,6 +1,6 @@
 [![Documentation Status](https://readthedocs.org/projects/mod-whitelist/badge/?version=latest)](https://mod-whitelist.readthedocs.io/en/latest/?badge=latest) [![Language grade: C/C++](https://img.shields.io/lgtm/grade/cpp/g/erwinwolff/mod_whitelist.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/erwinwolff/mod_whitelist/context:cpp) 
 
-[https://img.shields.io/badge/Donate-Support%20Me-red](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=erwinwolffnl%40outlook.com&item_name=Support+me+for+developing+mod_whitelist&currency_code=EUR&source=url)
+[![Support Me](https://img.shields.io/badge/Donate-Support%20Me-red)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=erwinwolffnl%40outlook.com&item_name=Support+me+for+developing+mod_whitelist&currency_code=EUR&source=url)
 
 # Mod_Whitelist
 ## Why Mod_Whitelist?
